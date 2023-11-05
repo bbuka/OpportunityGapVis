@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Percentage Calculator</h1>
+    
+    <label for="outcome">Outcome:</label>
+    <select id="outcome">
+        <!-- Add options dynamically if needed -->
+        <option value="somecoll">somecoll</option>
+        <option value="proginc">proginc</option>
+        <!-- Add more options as needed -->
+    </select>
+    
+    <br>
+    
+    <label for="race">Race:</label>
+    <select id="race">
+        <!-- Add options dynamically if needed -->
+        <option value="asian">asian</option>
+        <option value="black">black</option>
+        <!-- Add more options as needed -->
+    </select>
+    
+    <br>
+    
+    <label for="sex">Sex:</label>
+    <select id="sex">
+        <!-- Add options dynamically if needed -->
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <!-- Add more options as needed -->
+    </select>
+    
+    <br>
+    
+    <label for="rowNumber">Row Number:</label>
+    <input type="range" id="rowNumber" min="1" max="100" value="50">
+    <span id="rowNumberValue">50</span>
+    
+    <br>
+    
+    <button onclick="calculatePercentage()">Calculate</button>
+    
+    <div id="result"></div>
+    <script src="script.js"></script>
+    <script>
+        // Update the displayed row number value when the slider changes
+        const rowNumberSlider = document.getElementById("rowNumber");
+        const rowNumberValue = document.getElementById("rowNumberValue");
+
+        rowNumberSlider.addEventListener("input", () => {
+            rowNumberValue.textContent = rowNumberSlider.value;
+        });
+    </script>
+</body>
+</html>
