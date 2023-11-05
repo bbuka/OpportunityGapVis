@@ -1,19 +1,25 @@
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
 from flask_cors import CORS
+#import os
 
 app = Flask(__name__)
 CORS(app)
+if __name__ == '__main__':
+    app.run(debug=True, port=8000)
 
-
-app = Flask(__name__)
 
 # Reading a CSV file
 df = pd.read_csv('national_percentile_outcomes.csv')
 
+# Get the absolute path to the CSV file
+#csv_file_path = os.path.abspath('national_percentile_outcomes.csv')
+#df = pd.read_csv(csv_file_path)
+
 # Replace this function with your actual Python method
 def calculate_percentage(outcome, race, gender, percentile):
     return df.at[percentile - 1, f"{outcome}_{race}_{gender}"]
+    #return "Goodbye World!"
 
 @app.route('/')
 def index():

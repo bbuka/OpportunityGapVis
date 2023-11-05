@@ -50,7 +50,7 @@
     <br>
     
     <label for="rowNumber">Row Number:</label>
-    <input type="range" id="rowNumber" min="1" max="100" value="50">
+    <input type="range" id="rowNumber" min="1" max="80" value="50">
     <span id="rowNumberValue">50</span>
     
     <br>
@@ -59,14 +59,6 @@
     
     <div id="result"></div>
     <script src="script.js"></script>
-    <script>
-        // Update the displayed row number value when the slider changes
-        const rowNumberSlider = document.getElementById("rowNumber");
-        const rowNumberValue = document.getElementById("rowNumberValue");
-
-        rowNumberSlider.addEventListener("input", () => {
-            rowNumberValue.textContent = rowNumberSlider.value;
-        });
-    </script>
+   
 </body>
 </html>
